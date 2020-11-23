@@ -23,15 +23,6 @@ func (pd ProductDataStore) Delete(model *model.Product, id string) {
 	pd.db.Delete(model, id)
 }
 
-func (pd ProductDataStore) Where(str string, id string) *gorm.DB {
-	return pd.db.Where(str, id)
-}
-func (pd ProductDataStore) Order(str string) *gorm.DB {
-	return pd.db.Order(str)
-}
-func (pd ProductDataStore) Find(model *[]model.Product) *gorm.DB {
-	return pd.db.Find(model)
-}
 func (pd ProductDataStore) Save(model *model.Product) (err error) {
 	return pd.db.Save(model).Error
 }
